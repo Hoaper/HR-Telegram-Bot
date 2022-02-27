@@ -1,0 +1,36 @@
+{
+    "ru": {
+        "welcome": "🧲 Привет! Что бы ты хотел сделать?",
+        "settings": "⚙️ Список доступных настроек:",
+        "sent_to_manager_acc": "🔔 У вас новое резюме! 🔔\n",
+        "sent_callback": "✅ Сообщение отправлено работадателю",
+        "sent_photo": "🖼️ Отправьте ваше фото",
+        "answer": "\nОтвет: ",
+        "keyboards": {
+            "start": "✍️ Составить резюме",
+            "companies": "🏢 Выберите компанию",
+            "selected": "✅ Вы выбрали компанию {company}\nВы готовы ответить на вопросы от компании {company}?",
+            "start_poll": "🐻 Стартуем опрос!",
+            "settings": "⚙️ Настройки",
+            "next": "Далее ▶️",
+            "back": "◀️ Назад"
+        }
+    },
+    "uzb": {
+        "welcome": "🧲Assalomu alaykum! Nima qilishni xohlaysiz?",
+        "settings": "⚙️ Mavjud sozlamalar ro'yxati:",
+        "sent_to_manager_acc": "🔔 Sizda yangi rezyume! 🔔\n",
+        "sent_callback": "✅ Ish beruvchiga xabar yuborildi",
+        "sent_photo": "🖼️ Отправьте ваше фото",
+        "answer": "\nJavob bering: ",
+        "keyboards": {
+            "start": "✍️ Rezyume yaratish",
+            "companies": "🏢 Korxonani tanlash",
+            "selected": "✅ Siz korxonani tanladingiz {company}\nSiz korxonaning savollariga javob berishga tayyormisiz {company}?",
+            "start_poll": "🐻 Keling, so'rovni boshlaylik!",
+            "settings": "⚙️ Sozlamalar",
+            "next": "Keyingisi ▶️",
+            "back": "◀️ Orqaga"
+        }
+    }
+}
