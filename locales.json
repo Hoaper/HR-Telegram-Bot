@@ -8,8 +8,8 @@
         "answer": "\nОтвет: ",
         "keyboards": {
             "start": "✍️ Составить резюме",
-            "companies": "🏢 Выберите компанию",
-            "selected": "✅ Вы выбрали компанию {company}\nВы готовы ответить на вопросы от компании {company}?",
+            "companies": "🏢 Выберите профессию",
+            "selected": "✅ Вы выбрали профессию {company}\nВы готовы ответить на вопросы для профессии {company}?",
             "start_poll": "🐻 Стартуем опрос!",
             "settings": "⚙️ Настройки",
             "next": "Далее ▶️",
@@ -25,8 +25,8 @@
         "answer": "\nJavob bering: ",
         "keyboards": {
             "start": "✍️ Rezyume yaratish",
-            "companies": "🏢 Korxonani tanlash",
-            "selected": "✅ Siz korxonani tanladingiz {company}\nSiz korxonaning savollariga javob berishga tayyormisiz {company}?",
+            "companies": "🏢 Bir kasbni tanlang.",
+            "selected": "✅ Siz kasb tanladingiz {company}\nSiz kasb savollariga javob berishga tayyormisiz {company}?",
             "start_poll": "🐻 Keling, so'rovni boshlaylik!",
             "settings": "⚙️ Sozlamalar",
             "next": "Keyingisi ▶️",

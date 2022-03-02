@@ -2,50 +2,318 @@
 
     "Basic": {
         "ru": [
-            "Как вас зовут? (ФИО)", 
+            "Ваше имя и фамилия",
+
+            {"text":"Телефон", "request":"request_phone"},
+
+            "Семейное положение\nЖенат(Замужем) / Не женат (Не замужем)",
+
             "Сколько вам лет?",
-            "Ваш рабочий номер телефона?",
-            "Какого ваше образование?",
-            "Чем вы увлекаетесь?"
+
+            "Ваш адрес проживания"
+
         ],
         "uzb": [
-            "Как вас зовут? (ФИО)", 
-            "Сколько вам лет?",
-            "Ваш рабочий номер телефона?",
-            "Какого ваше образование?",
-            "Чем вы увлекаетесь?"
+            "Familiya va ismingizni yozing",
+            {"text":"Telefon", "request":"request_phone"},
+            "Oilaviy sharoitingiz\noilaviyman / oilamviy emasman",
+            "Yoshingiz nechida",
+            "Yashash manzilingizni kriting"
+
+        ]
+    },
+    "Oshpaz": {
+        "ru": [
+            "Где вы работали до этого?",
+            "Какой у вас стаж работы?",
+            "Где ты ранее готовил?\nНа предприятии / В чайхане / Дома"
+        ],
+        "uzb": [
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "Mexnat tajribangiz qancha?",
+            "Qayerda oshpazlik qilgansiz?\nyirik korxonada / choyxonada / uy sharoitida"
         ]
     },
 
-    "Asia Cons": {
+    "Karvinchi": {
         "ru": [
-            "Какие перспективы вами движут?",
-            "На сколько вы амбициозны?",
-            "Вы готовы работать уже на следующий день?"
-        ],
+            "Где и как долго вы работали до этого?",
+            "Какой у вас стаж работы?",
+            "Какая у вас была последняя зарплата?",
+            "Сколько вы хотите получать?"
+        ], 
         "uzb": [
-            "Какие перспективы вами движут?",
-            "На сколько вы амбициозны?",
-            "Вы готовы работать уже на следующий день?"
+            "Temp"
         ]
     },
 
-    "Movaroun": {
+    "Marketolog": {
         "ru": [
-            "Умеешь жарить мясо?"
-        ],  
-        "uzb": [
-            "Умеешь жарить мясо?"
-        ]
-    },
-
-    "Oila Market": {
-        "ru": [
-            "Как вы ладите с людьми?"
+            "На каких языках вы можете спокойно говорить?",
+            "Каков ваш опыт работы в сфере ООН?",
+            "Каков ваш опыт работы в сфере аналитического маркетинга?",
+            "Какие виды рекламы вы активно используете?",
+            "Есть ли у вас опыт в маркетинговой стратегии?\nДа / Нет",
+            "Последняя книга, которую вы прочитали о маркетинге?"
         ],
         "uzb": [
-            "Как вы ладите с людьми?"
+            "Qaysi tillarda mustaqil gaplasha olasiz?",
+            "SMM soxasida qanday tajribaga egasiz?",
+            "Analitik marketing soxasida qanday tajribaga egasiz?",
+            "Reklamaning qaysi turlaridan faol foydalanasiz?",
+            "Marketing bo‘yicha strategiya tuzish tajribangiz bormi?\nxa / yo‘q",
+            "Marketing bo‘yicha so‘ngi o‘qigan kitobingiz?"
         ]   
+    },
+    "Xostes": {
+        "ru": [
+            "На каких языках вы можете говорить самостоятельно?",
+            "Где и как долго вы работали до этого?",
+            "Какой у вас стаж работы?",
+            "Сколько была ваша последняя зарплата?",
+            "Вы полагаетесь на себя при принятии решений?\nДа / Нет"
+        ], 
+        "uzb": [
+            "Qaysi tillarda mustaqil gaplasha olasiz?",
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "Mexnat tajribangiz qancha?",
+            "So‘ngi ish xaqqingiz qancha bo‘lgan?",
+            "Siz qaror qabul qilishda o‘zingizga tayanasizmi?\nxa / yo‘q"
+        ]
+    },
+    "Moliyachi": {
+        "ru": [
+            "На каких языках вы можете общаться в совершенстве?",
+            "Есть ли у вас опыт работы с офисными программами Microsoft?",
+            "Финансы за счет Ваше сообщение у тебя есть"
+        ], 
+        "uzb": [
+            "Qaysi tillarda mukammal suxbatlasha olasiz?",
+            "Mikrosoft ofis dasturlari bilan ish tajribaga egamisiz?",
+            "Moliya hisobidan habaringiz bormi?"
+        ]
+    },
+    "Buxgalter": {
+        "ru": [
+            "На каких языках вы можете говорить самостоятельно?",
+            "Можно ли использовать программу -1С самостоятельно?\nДа / Нет",
+            "Вы можете использовать программу Exel ?\nДа / Нет",
+            "Есть ли у вас опыт сдачи ежемесячных отчетов?\nДа / Нет",
+            "Можете ли вы представить отчеты по Saliq.uz?\nДа / Нет",
+            "Где и как долго вы работали до этого?",
+            "Какой у вас стаж работы?",
+            "Какая у вас была последняя зарплата?"
+        ], 
+        "uzb": [
+            "Qaysi tillarda mustaqil gaplasha olasiz?",
+            "1S programmasidan mustaqil foydalana olasizmi?",
+            "Exel programmasidan mustaqil foydalana olasizmi?",
+            "Oylik xisobotlarni topshirish tajribangiz bormi?",
+            "Soliq.uz saytida xisobotlar topshira olasizmi?",
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "Mexnat tajribangiz qancha?",
+            "So‘ngi ish xaqqingiz qancha bo‘lgan?"
+        ]
+    },
+    "IT-mutaxasis": {
+        "ru": [
+            "На каких языках вы можете говорить самостоятельно?",
+            "Что ты в кратце можешь сказать об IT сфере, как специалист?",
+            "Есть ли у вас программы, которые вы создали своими руками??"
+        ], 
+        "uzb": [
+            "Qaysi tillarda mustaqil gaplasha olasiz?",
+            "IT soxasida nimalardan habaringiz bor?",
+            "O‘z qolingiz bilan tuzgan qandaydir dasturingiz bormi? (Nomi, va u qanday dastur)?"
+        ]
+    },
+    "Sall-senter operatori": {
+        "ru": [
+            "На каких языках можешь говорить?",
+            "Где и сколько ты работал?",
+            "Какова ваша последняя зарплата?",
+            "На кого вы пологаетесь во время принятия решения?",
+            "Вам нравится рисковать?"
+        ], 
+        "uzb": [
+            "Qaysi tillarda mustaqil suhbatlasha olasiz?",
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "So‘nggi ishingizda qancha ish haqqi olgansiz?",
+            "Siz qaror qabul qilishda o‘zingizga tayanasizmi?",
+            "Siz tavakkal qilishni yoqtirasizmi?"
+        ]
+    },
+    "Omborche": {
+        "ru": [
+            "Где и как долго вы работали?",
+            "Какая у вас была последняя зарплата?",
+            "Полагаетесь ли вы на себя во время принятия решения?",
+            "Любите ли вы рисковать?",
+            "Всех ли успехов вы добились самостоятельно?\nДа / Нет",
+            "Сможете ли вы поладить с новой командой для достижения лучшего результата?"
+        ], 
+        "uzb": [
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "So‘ngi ish xaqqingiz qancha bo‘lgan?",
+            "Siz qaror qabul qilishda o‘zingizga tayanasizmi?",
+            "Siz tavakkal qilishni yoqtirasizmi?",
+            "Barcha yutuqlaringizga o‘z kuchingiz bilan erishganmisiz?",
+            "Eng yaxshi natija bu jamoa bilan birga erishan natijami?"
+        ]
+    },
+    "Kassir": {
+        "ru": [
+            "Где и как долго вы работали до этого?",
+            "Какой у вас стаж работы?",
+            "Какая у вас была последняя зарплата?",
+            "Сколько вы хотите получать?"
+        ], 
+        "uzb": [
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "Mexnat tajribangiz qancha?",
+            "So‘ngi ish xaqqingiz qancha bo‘lgan?",
+            "Kancha ish xaqqi olmoxchisiz ?"
+        ]
+    },
+    "Xaydovchi": {
+        "ru": [
+            "Где и как долго вы работали до этого?",
+            "Какой у вас стаж работы?",
+            "Какая у вас была последняя зарплата?",
+            "Сколько вы хотите получать?"
+        ], 
+        "uzb": [
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "Mexnat tajribangiz qancha?",
+            "So‘ngi ish xaqqingiz qancha bo‘lgan?",
+            "Kancha ish xaqqi olmoxchisiz ?"
+        ]
+    },
+    "Qossop": {
+        "ru": [
+            "Где и как долго вы работали до этого?",
+            "Какой у вас стаж работы?",
+            "Какая у вас была последняя зарплата?",
+            "Сколько вы хотите получать?"
+        ], 
+        "uzb": [
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "Mexnat tajribangiz qancha?",
+            "So‘ngi ish xaqqingiz qancha bo‘lgan?",
+            "Kancha ish xaqqi olmoxchisiz ?"
+        ]
+    },
+    "Farrosh": {
+        "ru": [
+            "Где и как долго вы работали до этого?",
+            "Какой у вас стаж работы?",
+            "Какая у вас была последняя зарплата?",
+            "Сколько вы хотите получать?"
+        ], 
+        "uzb": [
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "Mexnat tajribangiz qancha?",
+            "So‘ngi ish xaqqingiz qancha bo‘lgan?",
+            "Kancha ish xaqqi olmoxchisiz ?"
+        ]
+    },
+    "Idish yuvuvchi": {
+        "ru": [
+            "Где и как долго вы работали до этого?",
+            "Какой у вас стаж работы?",
+            "Какая у вас была последняя зарплата?",
+            "Сколько вы хотите получать?"
+        ], 
+        "uzb": [
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "Mexnat tajribangiz qancha?",
+            "So‘ngi ish xaqqingiz qancha bo‘lgan?",
+            "Kancha ish xaqqi olmoxchisiz ?"
+        ]
+    },
+    "Reklama mutaxasisi": {
+        "ru": [
+            "Где и как долго вы работали до этого?",
+            "Какой у вас стаж работы?",
+            "Какая у вас была последняя зарплата?",
+            "Сколько вы хотите получать?"
+        ], 
+        "uzb": [
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "Mexnat tajribangiz qancha?",
+            "So‘ngi ish xaqqingiz qancha bo‘lgan?",
+            "Kancha ish xaqqi olmoxchisiz ?"
+        ]
+    },
+    "Ish boshqaruvchi": {
+        "ru": [
+            "Где и как долго вы работали до этого?",
+            "Какой у вас стаж работы?",
+            "Какая у вас была последняя зарплата?",
+            "Сколько вы хотите получать?"
+        ], 
+        "uzb": [
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "Mexnat tajribangiz qancha?",
+            "So‘ngi ish xaqqingiz qancha bo‘lgan?",
+            "Kancha ish xaqqi olmoxchisiz ?"
+        ]
+    },
+    "Qurilish ishlari": {
+        "ru": [
+            "Где и как долго вы работали до этого?",
+            "Какой у вас стаж работы?",
+            "Какая у вас была последняя зарплата?",
+            "Сколько вы хотите получать?"
+        ], 
+        "uzb": [
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "Mexnat tajribangiz qancha?",
+            "So‘ngi ish xaqqingiz qancha bo‘lgan?",
+            "Kancha ish xaqqi olmoxchisiz ?"
+        ]
+    },
+    "Zavhoz": {
+        "ru": [
+            "Где и как долго вы работали до этого?",
+            "Какой у вас стаж работы?",
+            "Какая у вас была последняя зарплата?",
+            "Сколько вы хотите получать?"
+        ], 
+        "uzb": [
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "Mexnat tajribangiz qancha?",
+            "So‘ngi ish xaqqingiz qancha bo‘lgan?",
+            "Kancha ish xaqqi olmoxchisiz ?"
+        ]
+    },
+    "Afitsant va afitsantkalar": {
+        "ru": [
+            "Где и как долго вы работали до этого?",
+            "Какой у вас стаж работы?",
+            "Какая у вас была последняя зарплата?",
+            "Сколько вы хотите получать?"
+        ], 
+        "uzb": [
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "Mexnat tajribangiz qancha?",
+            "So‘ngi ish xaqqingiz qancha bo‘lgan?",
+            "Kancha ish xaqqi olmoxchisiz ?"
+        ]
+    },
+    "Xodimlar bolimi raxbari": {
+        "ru": [
+            "Где и как долго вы работали до этого?",
+            "Какой у вас стаж работы?",
+            "Какая у вас была последняя зарплата?",
+            "Сколько вы хотите получать?"
+        ], 
+        "uzb": [
+            "Bundan avval qayerda va qancha muddat ishlagansiz?",
+            "Mexnat tajribangiz qancha?",
+            "So‘ngi ish xaqqingiz qancha bo‘lgan?",
+            "Kancha ish xaqqi olmoxchisiz ?"
+        ]
     }
 
 }

@@ -11,11 +11,11 @@ path_langs = os.path.join(os.path.dirname(__file__), "db", "langs.db")
 path_data = os.path.join(os.path.dirname(__file__), "db", "data.db")
 path_locales = os.path.join(os.path.dirname(__file__), "locales.json")
 path_questions = os.path.join(os.path.dirname(__file__), "questions.json")
+path_dir = os.path.dirname(__file__)
 
 supported_langs = {
     "🇷🇺 Русский 🇷🇺": "ru",
-    # "🇺🇸 English 🇺🇸": "eng",
-    "🇺🇿 Узбекский 🇺🇿": "uzb"
+    "🇺🇿 O'zbekcha 🇺🇿": "uzb"
 }
 
 output_lang_id = "uzb"
@@ -329,7 +329,9 @@ async def resume_start(msg: types.Message):
 @dp.message_handler(lambda x: x.text in getQuestions().keys() and x.text != "Basic")
 async def add_company(msg: types.Message):
     try:
-        locale = getLocale(getLangID(msg))
+        lang_id = getLangID(msg)
+        locale = getLocale(lang_id)
+        questions = getQuestions()[msg.text]
         kb = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
         setStatus(msg, "show_companies")
         kb.row(
@@ -338,7 +340,7 @@ async def add_company(msg: types.Message):
         )
         cur_data.execute("UPDATE data SET company=? WHERE chat_id=?", (msg.text, msg.chat.id))
         db_data.commit()
-
+        
         await msg.answer(
             text=locale['keyboards']['selected'].format(company=msg.text),
             reply_markup=kb
@@ -387,7 +389,6 @@ async def answers_processor(msg: types.Message):
         answers = json.dumps(answers)
         cur_data.execute("UPDATE data SET answers=? WHERE chat_id=?", (answers, msg.chat.id))
         db_data.commit()
-        print(answers, _type)
         if _type == "Basic" and index == len(questions["Basic"][lang_id]) :
             setStatus(msg, f"polling_{company}_1")
             await msg.answer(questions[company][lang_id][0], reply_markup=kb)
@@ -424,15 +425,6 @@ async def answers_processor(msg: types.Message):
         else:
             setStatus(msg, f"polling_{_type}_{len(questions[_type][lang_id])+1}")
             await msg.answer(locale['sent_photo'])
-
-#== startdebug ==#
-
-@dp.message_handler(commands=['lst'])
-async def print_all_data(msg):
-    cur_data.execute("SELECT * FROM data")
-    await msg.answer(cur_data.fetchall())
-
-#==  enddebug  == #
 
 @dp.message_handler(commands=['get_id'])
 async def get_id(msg: types.Message):
