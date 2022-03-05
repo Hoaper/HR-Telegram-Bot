@@ -447,7 +447,10 @@ async def answers_processor(msg: types.Message):
                 for _id, answer in enumerate(answs):
                     if answer == None:
                         continue
-                    qst = questions[key][output_lang_id][_id]
+                    try:
+                        qst = questions[key][output_lang_id][_id]
+                    except:
+                        continue
                     if isinstance(qst, dict):
                         qst = qst['text']
                     _return += f"{qst}{_answer}{answer}\n\n"
