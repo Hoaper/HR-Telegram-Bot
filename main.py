@@ -112,13 +112,22 @@ def getAnswers(msg: types.Message) -> dict:
 
 def addAnswers(answers, msg: types.Message, _type, index) -> dict:
     try:
-            answers[_type][index-1] = msg.text
+            if msg.contact:
+                answers[_type][index-1] = msg.contact.phone_number
+            else:
+                answers[_type][index-1] = msg.text
     except Exception as e:
         try:
-            answers[_type].append(msg.text)
+            if msg.contact:
+                answers[_type].append(msg.contact.phone_number)
+            else:
+                answers[_type].append(msg.text)
         except Exception as e:
             answers[_type] = []
-            answers[_type].append(msg.text)
+            if msg.contact:
+                answers[_type].append(msg.contact.phone_number)
+            else:
+                answers[_type].append(msg.text)
 
     return answers
 
@@ -282,7 +291,17 @@ async def back(msg: types.Message):
                 )
                 new_index = len(questions['Basic'][lang_id])
                 setStatus(msg, f"polling_Basic_{new_index}")
-                await msg.answer(questions["Basic"][lang_id][new_index-1], reply_markup=kb)
+                _return = questions["Basic"][lang_id][new_index-1]
+                if isinstance(_return, dict):
+                    kb = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
+                    kb.row(
+                        types.KeyboardButton(locale['keyboards']['send_number'])
+                    )
+                    kb.row(
+                        types.KeyboardButton(locale['keyboards']['back'])
+                    )
+                    _return = _return['text']
+                await msg.answer(_return, reply_markup=kb)
         else:
             lang_id = getLangID(msg)
             locale = getLocale(lang_id)
@@ -295,7 +314,11 @@ async def back(msg: types.Message):
             if next_index < 0:
                 next_index = 1
             setStatus(msg, f"polling_{status[1]}_{next_index+1}")
-            await msg.answer(questions[status[1]][lang_id][next_index], reply_markup=kb)
+            _return = questions[status[1]][lang_id][next_index]
+            if isinstance(_return, dict):
+                _return = _return['text']
+            
+            await msg.answer(_return, reply_markup=kb)
             return
     else:
         await msg.answer("!ERROR! Contact admin")
@@ -375,6 +398,7 @@ async def answers_processor(msg: types.Message):
     locale = getLocale(lang_id)
     if msg.text == locale['keyboards']['back']:
         return
+    
     if index <= len(questions[_type][lang_id]):
         
         cur_data.execute("SELECT company FROM data WHERE chat_id=?", (msg.chat.id, ))
@@ -394,9 +418,20 @@ async def answers_processor(msg: types.Message):
             await msg.answer(questions[company][lang_id][0], reply_markup=kb)
         else:
             try:
-                await msg.answer(questions[_type][lang_id][index], reply_markup=kb)
+                if isinstance(questions[_type][lang_id][index], dict):
+                    kb = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
+                    kb.row(
+                        types.KeyboardButton(locale['keyboards']['send_number'], request_contact=True)
+                    )
+                    kb.row(
+                        types.KeyboardButton(locale['keyboards']['back'])
+                    )
+                    await msg.answer(questions[_type][lang_id][index]['text'], reply_markup=kb)
+                else:
+                    await msg.answer(questions[_type][lang_id][index], reply_markup=kb)
+
                 setStatus(msg, f"polling_{_type}_{index + 1}")
-            except:
+            except Exception as e:
                 setStatus(msg, f"polling_{_type}_{len(questions[_type][lang_id])+1}")
                 await msg.answer(locale['sent_photo'])
 
@@ -407,15 +442,17 @@ async def answers_processor(msg: types.Message):
             answers = getAnswers(msg)
             addAnswers(answers, msg, _type, index)
             questions = getQuestions()
-
             for key, answs in answers.items():
                 _return += f"{key}:\n"
                 for _id, answer in enumerate(answs):
                     if answer == None:
                         continue
-                    _return += f"{questions[key][output_lang_id][_id]}{_answer}{answer}\n\n"
+                    qst = questions[key][output_lang_id][_id]
+                    if isinstance(qst, dict):
+                        qst = qst['text']
+                    _return += f"{qst}{_answer}{answer}\n\n"
 
-            for chat_id in RESUME_CHAT_IDS[_type]:
+            for chat_id in RESUME_CHAT_IDS:
                 await bot.send_photo(chat_id=chat_id, caption=_return, photo=msg.photo[0].file_id)
 
             await msg.answer(locale['sent_callback'])

@@ -11,6 +11,7 @@
             "companies": "🏢 Выберите профессию",
             "selected": "✅ Вы выбрали профессию {company}\nВы готовы ответить на вопросы для профессии {company}?",
             "start_poll": "🐻 Стартуем опрос!",
+            "send_number": "Поделиться номером",
             "settings": "⚙️ Настройки",
             "next": "Далее ▶️",
             "back": "◀️ Назад"
@@ -28,6 +29,7 @@
             "companies": "🏢 Bir kasbni tanlang.",
             "selected": "✅ Siz kasb tanladingiz {company}\nSiz kasb savollariga javob berishga tayyormisiz {company}?",
             "start_poll": "🐻 Keling, so'rovni boshlaylik!",
+            "send_number": "Telefonni ulashing",
             "settings": "⚙️ Sozlamalar",
             "next": "Keyingisi ▶️",
             "back": "◀️ Orqaga"
